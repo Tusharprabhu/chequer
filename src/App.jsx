@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 
 import Home from "/components/Home";
-import About from "/components/About";
+import Issuedlist from "/components/Issuedlist";
 import Navbar from "../components/Navbar";
 
 const routes = createBrowserRouter([
@@ -18,11 +18,11 @@ const routes = createBrowserRouter([
     ),
   },
   {
-    path: "/About",
+    path: "/issuedlist",
     element: (
       <>
         <Navbar />
-        <About />
+        <Issuedlist />
       </>
     ),
   },

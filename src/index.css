@@ -37,8 +37,8 @@ p {
   text-decoration: underline;
 }
 
-/* Home and About page styles */
-.home, .about {
+/* Home and issuedlist page styles */
+.home, .issuedlist {
   padding: 2rem;
   margin: 1rem;
   border-radius: 8px;
@@ -51,7 +51,7 @@ p {
   color: white;
 }
 
-.about {
+.issuedlist {
   background-color: #2ecc71; /* Green background */
   color: white;
 }

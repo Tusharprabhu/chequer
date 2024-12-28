@@ -1,10 +1,10 @@
 // components/About.jsx
 import React from "react";
 
-function About() {
+function Issuedlist() {
   return (
-    <div className="about">
-      <h2>About Page</h2>
+    <div className="issuedlist">
+      <h2>Issuedlist Page</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
         explicabo dignissimos ullam tempore sunt atque vel dicta asperiores.
@@ -29,4 +29,4 @@ function About() {
   );
 }
 
-export default About;
+export default Issuedlist;
