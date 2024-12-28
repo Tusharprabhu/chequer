@@ -1,0 +1,57 @@
+/* src/index.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .links a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .links a:hover {
+  text-decoration: underline;
+}
+
+/* Home and About page styles */
+.home, .about {
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home {
+  background-color: #3498db; /* Blue background */
+  color: white;
+}
+
+.about {
+  background-color: #2ecc71; /* Green background */
+  color: white;
+}
