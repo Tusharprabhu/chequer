@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home">
 <div className="table">
-  n
+  table
 </div>
     </div>
   );

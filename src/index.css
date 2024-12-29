@@ -5,22 +5,25 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
 }
 
 h1, h2 {
-  color: #333;
+  color: #ffffff; /* White text */
 }
 
 p {
-  color: #666;
+  color: #ffffff; /* White text */
   line-height: 1.6;
 }
 
 /* Navbar styles */
 .navbar {
-  background-color: #333;
+  background-color: #000000; /* Black background */
   padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem;
 }
 
 .navbar .links {
@@ -37,21 +40,56 @@ p {
   text-decoration: underline;
 }
 
-/* Home and issuedlist page styles */
+/* Home and Issuedlist page styles */
 .home, .issuedlist {
   padding: 2rem;
   margin: 1rem;
   border-radius: 8px;
-  background-color: white;
+  background-color: #808080; /* Gray background */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* White text */
 }
 
-.home {
-  background-color: #3498db; /* Blue background */
+/* Printcheque and Report page styles */
+.printcheque, .report {
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  background-color: #808080; /* Gray background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* White text */
+}
+
+.printcheque {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.printpreview {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: #808080; /* Gray background */
   color: white;
 }
 
-.issuedlist {
-  background-color: #2ecc71; /* Green background */
+button {
+  background-color: #000000; /* Black background */
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #333333; /* Darker black background */
+}
+
+button:active {
+  background-color: #666666; /* Even darker black background */
 }

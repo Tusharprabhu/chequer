@@ -6,6 +6,9 @@ import {
 import Home from "/components/Home";
 import Issuedlist from "/components/Issuedlist";
 import Navbar from "../components/Navbar";
+import Printcheque from "/components/Printcheque";
+import Report from "/components/Report";
+
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +29,27 @@ const routes = createBrowserRouter([
       </>
     ),
   },
+  
+  {
+    path: "/printcheque",
+    element: (
+      <>
+        <Navbar />
+        <Printcheque />
+      </>
+    ),
+  },
+  {
+
+    path:"report",
+    element: (
+      <>
+        <Navbar />
+        <Report />
+      </>
+    ),
+  }
+  
 ]);
 
 export default function App() {
