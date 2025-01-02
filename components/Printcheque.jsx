@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import { MongoClient } from "mongodb";
 
 const PrintCheque = () => {
   const [data, setData] = useState([]);
@@ -8,34 +9,23 @@ const PrintCheque = () => {
   const [amount, setAmount] = useState("");
 
   useEffect(() => {
-    Papa.parse("/data/file.csv", {
-      download: true,
-      header: true,
-      complete: (results) => {
-        setData(results.data);
-      },
-    });
+    const fetchData = async () => {
+      const client = new MongoClient('mongodb+srv://admin:admin@cluster0.sbw1w.mongodb.net/?retryWrites=true&w=majority');
+      try {
+        await client.connect();
+        const database = client.db("Cluster0");
+        const collection = database.collection("database"); // Replace with your collection name
+        const data = await collection.find({}).toArray();
+        setData(data);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+      } finally {
+        await client.close();
+      }
+    };
+
+    fetchData();
   }, []);
-
-  const handlePrintAndSave = () => {
-    window.print();
-    const newData = { recipient, bank, amount };
-
-    fetch("/api/saveCheque", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newData),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log("Data saved:", result);
-      })
-      .catch((error) => {
-        console.error("Error saving data:", error);
-      });
-  };
 
   return (
     <div className="printcheque">
@@ -80,20 +70,6 @@ const PrintCheque = () => {
           onChange={(e) => setAmount(e.target.value)}
         />
       </div>
-      <div className="printpreview">
-        <div className="cheque-details"></div>
-        <h2>Cheque Details</h2>
-        <p>
-          <strong>Recipient:</strong> {recipient}
-        </p>
-        <p>
-          <strong>Bank:</strong> {bank}
-        </p>
-        <p>
-          <strong>Amount:</strong> {amount}
-        </p>
-      </div>
-      <button onClick={handlePrintAndSave}>Print Cheque</button>
     </div>
   );
 };
